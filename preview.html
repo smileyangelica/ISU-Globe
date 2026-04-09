@@ -1,0 +1,321 @@
+<!-- Demo/Preview page showing what the sphere looks like -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview - Iconic Number Sphere</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0e27 0%, #16213e 50%, #0f1d35 100%);
+            color: #00d4ff;
+            font-family: 'Courier New', monospace;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px #00d4ff;
+        }
+
+        .intro {
+            text-align: center;
+            color: #88ccff;
+            margin-bottom: 40px;
+        }
+
+        .preview-section {
+            background: rgba(10, 14, 39, 0.9);
+            border: 2px solid #00d4ff;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .preview-section h2 {
+            color: #00ffff;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00d4ff;
+            padding-bottom: 10px;
+        }
+
+        .frame {
+            background: #000;
+            border: 1px solid #00d4ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            text-align: center;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 0.75em;
+            line-height: 1.1;
+            overflow-x: auto;
+        }
+
+        .frame span.land {
+            color: #00ffff;
+        }
+
+        .frame span.ocean {
+            color: #003366;
+        }
+
+        .frame span.deep {
+            color: #000066;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .comparison-item {
+            background: rgba(0, 100, 100, 0.1);
+            padding: 15px;
+            border: 1px solid #00cccc;
+            border-radius: 4px;
+        }
+
+        .comparison-item h3 {
+            color: #00ffff;
+            margin-bottom: 10px;
+        }
+
+        .comparison-item p {
+            color: #88ccff;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat {
+            background: rgba(0, 150, 200, 0.1);
+            padding: 15px;
+            border: 1px solid #00d4ff;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.8em;
+            color: #00ffff;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #88ccff;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+
+        code {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #00ffff;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .back-link a {
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .back-link a:hover {
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .frame {
+                font-size: 0.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌍 Preview: Iconic Number Sphere</h1>
+        <div class="intro">
+            <p>See what the rotating sphere looks like when you run <code>python globe.py</code></p>
+        </div>
+
+        <div class="preview-section">
+            <h2>🎬 Animation Frames</h2>
+            <p style="color: #88ccff; margin-bottom: 15px;">
+                The sphere rotates continuously. Here are three snapshots showing different rotation angles:
+            </p>
+            
+            <div class="frame">Frame 1 (0° - Front):
+            444555555566667777777
+          4444555555566667777777777
+        44455555555566666777777777777
+       444555555555666666677777777777777
+      4445555555555666666667777777777777777
+     444555555555556666666677777777777777777
+    4445555555555556666666677777777777777777
+    4445555555555556666666677777777777777777
+    4445555555555556666666677777777777777777
+    4445555555555556666666677777777777777777
+     444555555555556666666677777777777777777
+      4445555555555666666667777777777777777
+       444555555555666666677777777777777
+        44455555555566666777777777777
+          4444555555566667777777777
+            444555555566667777777
+            </div>
+
+            <div class="frame">Frame 3 (90° - Rotating):
+            555666677778888899999
+          55566667777888889999999
+        5556666777778888899999999999
+       555666677777888889999999999999
+      5556666777778888899999999999999999
+     55566667777788888999999999999999999
+    555666677777888889999999999999999999
+    555666677777888889999999999999999999
+    555666677777888889999999999999999999
+    555666677777888889999999999999999999
+     55566667777788888999999999999999999
+      5556666777778888899999999999999999
+       555666677777888889999999999999
+        5556666777778888899999999999
+          55566667777888889999999
+            555666677778888899999
+            </div>
+
+            <div class="frame">Frame 5 (180° - Back):
+            777888899990001111222
+          77788889999000111122222
+        7778888999900011112222222222
+       777888899990001111222222222222
+      7778888999900011112222222222222222
+     77788889999000111122222222222222222
+    777888899990001111222222222222222222
+    777888899990001111222222222222222222
+    777888899990001111222222222222222222
+    777888899990001111222222222222222222
+     77788889999000111122222222222222222
+      7778888999900011112222222222222222
+       777888899990001111222222222222
+        7778888999900011112222222222
+          77788889999000111122222
+            777888899990001111222
+            </div>
+
+            <p style="color: #88ccff; margin-top: 20px;">
+                The sphere rotates smoothly, displaying all digits 0-9 as it spins around the vertical axis.
+                Darker digits (lower numbers) represent ocean depths, while brighter digits represent landmasses.
+            </p>
+        </div>
+
+        <div class="preview-section">
+            <h2>📊 What You'll See</h2>
+            
+            <div class="comparison">
+                <div class="comparison-item">
+                    <h3>Terminal Display</h3>
+                    <p>Clean ASCII sphere in your terminal. Colors show depth and landmass. Updates 20 times per second for smooth animation.</p>
+                </div>
+                <div class="comparison-item">
+                    <h3>Rotation Behavior</h3>
+                    <p>Continuous smooth rotation around vertical axis (Y-axis in 3D space). Complete revolution takes about 42 seconds.</p>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value">20</div>
+                    <div class="stat-label">FPS</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">50ms</div>
+                    <div class="stat-label">Frame Time</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">0-9</div>
+                    <div class="stat-label">Digits Used</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">6</div>
+                    <div class="stat-label">Continents</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h2>🎨 Color Scheme</h2>
+            <p style="color: #88ccff; margin-bottom: 15px;">
+                The sphere uses a blue/cyan gradient to simulate the iconic digital earth aesthetic:
+            </p>
+            
+            <div class="stats">
+                <div class="stat" style="background: rgba(0, 20, 100, 0.3); border-color: #000066;">
+                    <div class="stat-value">0-3</div>
+                    <div class="stat-label">Deep Ocean<br><span style="font-size: 0.7em;">Dark Blue</span></div>
+                </div>
+                <div class="stat" style="background: rgba(0, 100, 150, 0.3); border-color: #0066cc;">
+                    <div class="stat-value">4-6</div>
+                    <div class="stat-label">Ocean<br><span style="font-size: 0.7em;">Medium Blue</span></div>
+                </div>
+                <div class="stat" style="background: rgba(0, 150, 200, 0.3); border-color: #00cccc;">
+                    <div class="stat-value">7-9</div>
+                    <div class="stat-label">Land<br><span style="font-size: 0.7em;">Bright Cyan</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h2>💡 Tips for Best Experience</h2>
+            <ul style="color: #88ccff; line-height: 2;">
+                <li>✓ Use a large terminal window (120+ characters wide) for best detail</li>
+                <li>✓ Dark terminal background works best with the color scheme</li>
+                <li>✓ Terminal font should be monospace (Courier New, Consolas, etc.)</li>
+                <li>✓ Press Ctrl+C to stop the animation gracefully</li>
+                <li>✓ Works on Windows, macOS, and Linux</li>
+            </ul>
+        </div>
+
+        <div class="back-link">
+            <p style="color: #88ccff; margin-bottom: 15px;">Ready to run the sphere?</p>
+            <p style="font-size: 1.3em; margin-bottom: 20px;">
+                <code>$ python globe.py</code>
+            </p>
+            <a href="index.html">← Back to Main Page</a>
+        </div>
+    </div>
+</body>
+</html>

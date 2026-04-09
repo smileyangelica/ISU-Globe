@@ -1,0 +1,38 @@
+# GitHub Pages Configuration for Iconic Number Sphere
+# This file enables proper GitHub Pages deployment
+
+title: Iconic Number Sphere
+description: A 3D rotating ASCII-style digital globe made of digits 0-9
+author: ISU AI Workshop 2026
+url: https://yourusername.github.io/iconic-number-sphere
+
+# Theme configuration
+theme: jekyll-theme-minimal
+markdown: kramdown
+
+# GitHub Pages specific settings
+plugins:
+  - jekyll-github-metadata
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-feed
+
+# Exclude files from processing
+exclude:
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+
+# Include files even if they would normally be excluded
+include:
+  - .gitignore
+
+# Output settings
+permalink: /:title/
+paginate: 10
+
+# Collections
+collections:
+  - pages
